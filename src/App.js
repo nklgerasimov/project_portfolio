@@ -4,24 +4,19 @@ import './styles/main.css'
 import Navbar from './components/navbar/Navbar';
 
 import Footer from './components/footer/Footer';
-import Home from './pages/home/Home';
-import Projects from './pages/projects/Projects';
-import Contacts from './pages/contacts/Contacts';
-import Project from './pages/project/Project';
+
+import AppRouter from './components/AppRouter';
+import ScrollToTop from './utils/ScrollToTop';
 
 
 function App() {
   return (
     <div className="App">
         <Router>
-            <Navbar/>
-            <Routes>
-                <Route path='/' element={<Home/>} />
-                <Route path='/projects' element={<Projects/>} />
-                <Route path='/project' element={<Project/>} />
-                <Route path='/contacts' element={<Contacts/>} />
-            </Routes>
-            <Footer/>
+            <ScrollToTop />
+            <Navbar />
+            <AppRouter />
+            <Footer />
         </Router>
     </div>
   );

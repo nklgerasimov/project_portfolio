@@ -3,6 +3,7 @@ import classes from './Projects.module.css'
 
 import Project from '../../components/project/Project';
 import {projects} from './../../helpers/projectsList/ProjectsList'
+import { NavLink, Navigate, Route, Routes } from 'react-router-dom';
 
 const Projects = () => {
   return (
@@ -10,13 +11,14 @@ const Projects = () => {
         <div className="container">
             <h2 className={classes["title-1"]}>Projects</h2>
             <ul className={classes.projects}>
-                {projects.map((project, index) => {
+                {projects.map((project) => {
                     return (
-                        <Project
-                            key={index}
-                            title={project.title}
-                            img={project.img}
-                        />
+                                <Project
+                                    key={project.id}
+                                    title={project.title}
+                                    img={project.img}
+                                    index={project.id}
+                                />
                     )
                 })}
             

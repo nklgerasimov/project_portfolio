@@ -1,10 +1,8 @@
 import React from 'react'
 import classes from './Navbar.module.css';
 
-import btn_sun from "./icons/sun.svg";
-import btn_moon from "./icons/moon.svg";
-
 import { NavLink } from 'react-router-dom';
+import BtnDarkMode from '../button/btnDarkMode/BtnDarkMode';
 
 const Navbar = () => {
 
@@ -19,10 +17,7 @@ const Navbar = () => {
                     <strong>Freelancer</strong> portfolio
                 </NavLink>
 
-                <button className={classes["dark-mode-btn"]}>
-                    <img src={btn_sun} alt="Light mode" className={classes["dark-mode-btn__icon"]}/>
-                    <img src={btn_moon} alt="Dark mode" className={classes["dark-mode-btn__icon"]}/>
-                </button>
+                <BtnDarkMode />
 
                 <ul className={classes["nav-list"]}>
                     <li className={classes["nav-list__item"]}>
@@ -37,7 +32,7 @@ const Navbar = () => {
                     </li>
 
                     <li className={classes["nav-list__item"]}>
-                        <NavLink to='/contacts' className={({isActive}) => isActive ? activeLink : normalLink}>
+                        <NavLink to='/contacts' exact className={({isActive}) => isActive ? activeLink : normalLink}>
                             Contacts
                         </NavLink>
                     </li>
